@@ -1,0 +1,748 @@
+.wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.bg {
+    /* background-color: #F3F3FC; */
+    background-image: url(../img/bg4.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.shadow {
+    box-shadow: 10px 9px 12px 0px rgba(17, 17, 26, 0.18);
+}
+
+li {
+    list-style: none;
+}
+
+.site-title {
+    font-size: 32px;
+    font-family: 'Orelega One', cursive;
+    color: black;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.site-title a {
+    color: black;
+    text-shadow: 0 4px 6px #fff;
+}
+
+.section-title {
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+    text-shadow: 2px 4px 6px #adadad;
+    font-family: 'Fanwood Text', serif;
+    letter-spacing: 4px;
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+
+.section-title::after {
+    content: "";
+    width: 250px;
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -20px;
+    background: rgba(169, 70, 56, 1);
+}
+
+.sub-title {
+    font-size: 28px;
+    color: rgb(80, 76, 72);
+    margin-bottom: 40px;
+    font-family: 'Fanwood Text', serif;
+}
+
+.text {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Fanwood Text', serif;
+}
+
+p {
+    color: rgb(80, 76, 72);
+    line-height: 2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+span {
+    font-size: 14px;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn a {
+    color: white;
+    background-color: rgb(28, 20, 11);
+    border: 3px solid rgb(28, 20, 11);
+    border-radius: 15px;
+    padding: 10px 60px;
+    transition: 0.5s;
+    font-family: 'Fanwood Text', serif;
+    font-size: 20px;
+}
+
+.btn a:hover {
+    color: rgb(28, 20, 11);
+    background-color: white;
+    font-weight: bold;
+}
+
+.submit {
+    color: white;
+    background-color: rgb(28, 20, 11);
+    border: 3px solid rgb(28, 20, 11);
+    border-radius: 15px;
+    padding: 10px 80px;
+    transition: 0.5s;
+    font-family: 'Fanwood Text', serif;
+}
+
+.submit:hover {
+    color: rgb(28, 20, 11);
+    background-color: white;
+    font-weight: bold;
+}
+
+.fadein {
+    width: 100%;
+    opacity: 0;
+    transition: 0.8s;
+    transform: translateY(30px);
+}
+
+/* --------------------
+ヘッダー
+-------------------- */
+
+header {
+    background-color: rgba(142, 142, 130, 0.4);
+    padding: 20px 0;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-menu {
+    display: flex;
+    font-family: 'Fanwood Text', serif;
+}
+
+header ul li {
+    margin-left: 30px;
+}
+
+.header-menu a {
+    color: black;
+    font-weight: bold;
+    text-shadow: 0 4px 6px #fff;
+    font-size: 20px;
+}
+
+header li a:hover {
+    opacity: 0.7;
+}
+
+
+.toggle-btn {
+    background-color: rgba(142, 142, 130, 0.4);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.toggle-btn:hover {
+    opacity: 0.7;
+}
+
+.toggle-btn span {
+    height: 3px;
+    width: 40px;
+    background-color: white;
+    position: absolute;
+    display: block;
+    transition: 0.5s;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 19px;
+}
+
+.toggle-btn span:nth-child(2) {
+    top: 30px;
+}
+
+.toggle-btn span:nth-child(3) {
+    bottom: 17px;
+}
+
+.open .toggle-btn {
+    z-index: 30;
+}
+
+.open .toggle-btn span {
+    background-color: #fff;
+}
+
+.open .toggle-btn span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: calc(40px / 1.41);
+    left: 18%;
+}
+
+.open .toggle-btn span:nth-child(2) {
+    display: none;
+}
+
+.open .toggle-btn span:nth-child(3) {
+    transform: rotate(45deg);
+    bottom: calc(40px / 1.41);
+    left: 18%;
+}
+
+
+#nav-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    padding: 90px 30px 0 30px;
+    background-color: black;
+    width: 300px;
+    z-index: 30;
+    font-size: 16px;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.open #nav-menu {
+    right: 0;
+    opacity: 1;
+}
+
+#nav-menu ul {
+    margin-bottom: 40px;
+    text-shadow: 0 4px 6px #fff;
+    font-family: 'Fanwood Text', serif;
+}
+
+#nav-menu ul li {
+    padding: 10px 0px;
+    border-bottom: solid 1px white;
+}
+
+#nav-menu .header-menu li:last-child {
+    border-bottom: solid 1px white;
+}
+
+#nav-menu .sns li {
+    padding: 10px 0px;
+}
+
+#nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.open .mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 20;
+}
+
+
+/* ----------------
+メインビジュアル
+---------------- */
+
+.mainvisual {
+    height: 100vh;
+    width: 100%;
+}
+
+.fade li {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    animation: slideAnime 24s ease 0s infinite;
+}
+
+.fade li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fade li::after {
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0px 0px 15px 2px rgb(255, 255, 255);
+    position: absolute;
+}
+
+.fade li:nth-of-type(1) {
+    animation-delay: 0s
+}
+
+.fade li:nth-of-type(2) {
+    animation-delay: 6s
+}
+
+.fade li:nth-of-type(3) {
+    animation-delay: 12s
+}
+
+.fade li:nth-of-type(4) {
+    animation-delay: 18s
+}
+
+@keyframes slideAnime {
+    0% {
+        opacity: 0;
+    }
+
+    6% {
+        opacity: 1;
+    }
+
+    19% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* -------------
+ABOUT
+------------- */
+
+.about-contents {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-img {
+    width: 60%;
+}
+
+.about-img img {
+    width: 100%;
+}
+
+.about-text {
+    width: 40%;
+    padding-top: 10%;
+    padding-left: 5%;
+}
+
+
+/* -------------
+PRODUCT
+------------- */
+
+.chair {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.chair-img {
+    position: relative;
+    width: 60%;
+}
+
+.img1 {
+    position: absolute;
+    width: 70%;
+    top: 0;
+    left: 30%;
+    z-index: 5;
+}
+
+.img2 {
+    width: 50%;
+    margin-top: 150px;
+    /* position: absolute; */
+    /* top: 50%; */
+}
+
+.chair-text {
+    width: 35%;
+    margin-top: 300px;
+}
+
+.chair-text h3 {
+    margin-bottom: 20px;
+}
+
+
+
+.sofa {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.sofa-text {
+    width: 40%;
+    margin-top: 60px;
+    margin-right: 40px;
+}
+
+.sofa-img {
+    width: 60%;
+}
+
+.sofa-img img {
+    width: 100%;
+}
+
+.lightning {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 300px;
+}
+
+.lightning-img {
+    position: relative;
+    width: 60%;
+}
+
+.img3 {
+    width: 60%;
+    z-index: 5;
+    position: absolute;
+}
+
+.img4 {
+    width: 50%;
+    position: absolute;
+    top: 70%;
+    left: 40%;
+}
+
+.lightning-text {
+    width: 40%;
+    margin-top: 100px;
+}
+
+.lightning-text h3 {
+    margin-bottom: 20px;
+}
+
+
+/* -------------
+DESGIN
+------------- */
+.design-contents {
+    display: flex;
+    margin-bottom: 120px;
+}
+
+.design-text {
+    margin: 15% 60px 0px 0px;
+    width: 40%;
+}
+
+.design-img {
+    width: 60%;
+}
+
+.design-img img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px 20px;
+    margin-bottom: 70px;
+}
+
+.works-contents a {
+    transition: 0.5s;
+}
+
+.works-contents a:hover {
+    opacity: 0.7;
+}
+
+.works-contents-img {
+    width: 100%;
+}
+
+.works p {
+    font-family: 'Fanwood Text', serif;
+}
+
+
+
+/* -------------
+NEWS
+------------- */
+
+.news-list {
+    margin-bottom: 60px;
+    font-family: 'Fanwood Text', serif;
+}
+
+.news-list a {
+    text-decoration: none;
+    color: rgb(80, 76, 72);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 18px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+}
+
+.news-list a:hover {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.news-list dt {
+    width: 10%;
+    border-bottom: 1px solid;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.news-list dd {
+    width: 90%;
+    border-bottom: 1px solid;
+    padding: 5px 0;
+    padding-left: 20px;
+}
+
+/* -------------
+SHOP
+------------- */
+
+.shop-info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.shop-info img {
+    width: 50%;
+    object-fit: cover;
+}
+
+.shop-info-text {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+.map iframe {
+    width: 100%;
+}
+
+/* -------------
+CONTACT
+------------- */
+
+.contact-text {
+    text-align: center;
+}
+
+.contact-text .text {
+    font-size: 24px;
+}
+
+.contact-wrapper {
+    width: 100%;
+    padding: 80px 30px;
+}
+
+.contact-wrapper p {
+    font-size: 20px;
+    margin-right: 30px;
+    width: 30%;
+    font-family: 'Fanwood Text', serif;
+}
+
+
+.form {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message {
+    height: 200px;
+}
+
+.contact-form {
+    border: 1px solid rgb(219, 219, 249);
+    background-color: white;
+    width: 70%;
+}
+
+input {
+    padding: 10px;
+}
+
+.checkbox-inner {
+    text-align: left;
+    width: 70%;
+    font-family: 'Fanwood Text', serif;
+}
+
+.checkbox {
+    width: 5%;
+    margin-bottom: 20px;
+}
+
+textarea {
+    padding: 10px;
+    height: 100%;
+}
+
+
+
+/* -------------
+フッター
+------------- */
+
+footer {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+footer a {
+    color: white;
+}
+
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-title a {
+    font-size: 32px;
+    font-family: 'Orelega One', cursive;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+footer li {
+    padding: 0 20px;
+    border-right: 1px solid white;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Fanwood Text', serif;
+}
+
+footer li:last-child {
+    border-right: none;
+}
+
+.SNS-list {
+    display: flex;
+    color: white;
+}
+
+.icon {
+    width: 100%;
+}
+
+
+.copy-right {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+
+
+.top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 8;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border-color: red;
+    background: rgb(100, 100, 100, 0.5);
+}
+
+.top-btn::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7px 10px 7px;
+    border-color: transparent transparent rgb(200, 200, 200) transparent;
+    top: -38%;
+    left: 32%;
+    position: relative;
+}
