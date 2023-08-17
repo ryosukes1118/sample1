@@ -1160,13 +1160,13 @@ footer li:last-child {
 .sub-text1::after{
     font-size: 12px;
     top: 6px;
-    left: 120px;
+    left: 100px;
 }
 
 .sub-text2::after{
     font-size: 12px;
     top: 6px;
-    left: 140px;
+    left: 120px;
 }
 
 }
