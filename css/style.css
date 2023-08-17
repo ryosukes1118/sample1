@@ -1,7 +1,9 @@
+@charset "UTF-8";
+
 .wrapper {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 60px;
 }
 
 .bg {
@@ -78,9 +80,6 @@ a {
     text-decoration: none;
 }
 
-span {
-    font-size: 14px;
-}
 
 section {
     padding: 90px 0;
@@ -380,6 +379,10 @@ ABOUT
 
 .about-img img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
+    text-align: right;
 }
 
 .about-text {
@@ -421,7 +424,7 @@ PRODUCT
 
 .chair-text {
     width: 35%;
-    margin-top: 300px;
+    margin-top: 25%;
 }
 
 .chair-text h3 {
@@ -477,10 +480,6 @@ PRODUCT
 .lightning-text {
     width: 40%;
     margin-top: 100px;
-}
-
-.lightning-text h3 {
-    margin-bottom: 20px;
 }
 
 
@@ -615,7 +614,7 @@ CONTACT
 .contact-wrapper p {
     font-size: 20px;
     margin-right: 30px;
-    width: 30%;
+    width: 20%;
     font-family: 'Fanwood Text', serif;
 }
 
@@ -624,7 +623,27 @@ CONTACT
     width: 100%;
     margin-bottom: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.sub-text1,.sub-text2{
+    position: relative;
+}
+
+.sub-text1::after{
+    content: "※確認用";
+    position: absolute;
+    font-size: 14px;
+    bottom: -10px;
+    left: 0px;
+}
+
+.sub-text2::after{
+    content: "※複数選択可";
+    position: absolute;
+    font-size: 14px;
+    bottom: -18px;
+    left: 0px;
 }
 
 .message {
@@ -647,9 +666,9 @@ input {
     font-family: 'Fanwood Text', serif;
 }
 
-.checkbox {
-    width: 5%;
-    margin-bottom: 20px;
+label{
+    display: inline-block;
+    margin-right: 30px;
 }
 
 textarea {
@@ -689,7 +708,6 @@ footer .wrapper {
 .footer-menu {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     text-align: center;
 }
 
@@ -705,15 +723,20 @@ footer li:last-child {
     border-right: none;
 }
 
+
 .SNS-list {
     display: flex;
     color: white;
+    align-items: center;
 }
 
-.icon {
-    width: 100%;
+.SNS-list li{
+    vertical-align: bottom;
 }
 
+.sns-icon{
+    width: 20px;
+}
 
 .copy-right {
     text-align: center;
@@ -745,4 +768,426 @@ footer li:last-child {
     top: -38%;
     left: 32%;
     position: relative;
+}
+
+
+/* ====================
+レスポンシブ
+==================== */
+
+@media (max-width:960px){
+
+/* ====================
+共通
+==================== */
+
+    .wrapper {
+        padding: 0 5%;
+    }
+
+    .section-title {
+        margin-bottom: 60px;
+    }
+
+    .sub-title {
+        margin-bottom: 20px;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+/* ====================
+ヘッダー
+==================== */
+
+    header {
+        padding: 10px 0;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+
+    .toggle-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .toggle-btn span {
+        height: 2px;
+        width: 30px;
+        transition: 0.5s;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    .toggle-btn span:nth-child(1) {
+        top: 12px;
+    }
+    
+    .toggle-btn span:nth-child(2) {
+        top: 20px;
+    }
+    
+    .toggle-btn span:nth-child(3) {
+        bottom: 11px;
+    }
+        
+    .open .toggle-btn span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: calc(26px / 1.41);
+        left: 12%;
+    }
+        
+    .open .toggle-btn span:nth-child(3) {
+        transform: rotate(45deg);
+        bottom: calc(26px / 1.41);
+        left: 12%;
+    }
+
+/* ====================
+ABOUT
+==================== */
+.about-contents {
+    flex-direction: column;
+}
+
+.about-img {
+    width: 100%;
+    text-align: center;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-text {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 0;
+}
+
+/* ====================
+PRODUCT
+==================== */
+
+.chair {
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin-bottom: 60px;
+}
+
+.chair-img {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.img1 {
+    position: static;
+    width: 60%;
+    height: 20%;
+    object-fit: cover;
+    z-index: 5;
+    margin-right: 20px;
+}
+
+.img2 {
+    width: 30%;
+    margin-top: 20px;
+
+}
+
+.chair-text {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.chair-text h3 {
+    margin-bottom: 20px;
+}
+
+
+
+.sofa {
+    flex-direction: column-reverse;
+}
+
+.sofa-text {
+    width: 100%;
+    margin-top: 30px;
+    margin-right: 0px;
+}
+
+.sofa-img {
+    width: 100%;
+    text-align: center;
+}
+
+.sofa-img img {
+    width: 100%;
+}
+
+
+.lightning {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.lightning-img {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img3 {
+    margin-top: 40px;
+    width: 50%;
+    z-index: 5;
+    position: static;
+}
+
+.img4 {
+    margin-bottom: 30px;
+    width: 45%;
+    height: 40%;
+    object-fit: cover;
+    position: static;
+}
+
+.lightning-text {
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+/* ====================
+DESIGN
+==================== */
+
+.design-contents {
+    flex-direction: column-reverse;
+    margin-bottom: 60px;
+}
+
+.design-text {
+    margin: 30px 0px 0px 0px;
+    width: 100%;
+}
+
+.design-img {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.design-img img:first-child {
+    width: 70%;
+    margin-bottom: 0px;
+}
+
+.design-img img:last-child {
+    width: 28%;
+    margin-bottom: 0px;
+    object-fit: cover;
+}
+
+/* ====================
+SHOP
+==================== */
+
+.shop-info {
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.shop-info img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.shop-info-text {
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+/* ====================
+CONTACT
+==================== */
+
+.contact-wrapper p {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 40px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+
+.sub-text1::after{
+    content: "※確認用";
+    position: absolute;
+    font-size: 14px;
+    top: 8px;
+    left: 150px;
+}
+
+.sub-text2::after{
+    content: "※複数選択可";
+    position: absolute;
+    font-size: 14px;
+    top: 8px;
+    left: 170px;
+}
+
+.message {
+    height: 200px;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.checkbox-inner {
+    width: 100%;
+}
+
+
+/* ====================
+フッター
+==================== */
+
+footer {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    padding-top: 16px;
+    padding-bottom: 10px;
+}
+
+footer .wrapper {
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.footer-title{
+    margin-bottom: 10px;
+}
+
+.footer-menu {
+    margin-bottom: 10px;
+}
+
+footer li {
+    padding: 0 2%;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+footer li:last-child {
+    border-right: none;
+}
+
+.SNS-list {
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.SNS-list li{
+    vertical-align: bottom;
+    padding: 0 20px;
+}
+
+.sns-icon{
+    width: 20px;
+}
+
+}
+
+@media (max-width:810px){
+
+/* ====================
+共通
+==================== */
+
+.sub-title {
+    font-size: 24px;
+    color: rgb(80, 76, 72);
+    margin-bottom: 30px;
+    font-family: 'Fanwood Text', serif;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.news-list a {
+    font-size: 16px;
+}
+
+.news-list a:hover {
+    font-size: 18px;
+}
+
+.news-list dd {
+    padding-left: 30px;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.contact-text .text {
+    font-size: 20px;
+}
+
+.contact-wrapper p {
+    font-size: 16px;
+}
+
+.sub-text1::after{
+    font-size: 12px;
+}
+
+.sub-text2::after{
+    font-size: 12px;
+}
+
+}
+
+@media (max-width:580px){
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 60px;
+    }
+    
+    .section-title::after {
+        width: 180px;
+        bottom: -10px;
+    }
+}
+
+@media (max-width:390px){
+    .news-list a {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .news-list a:hover {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
 }
