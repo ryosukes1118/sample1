@@ -1,24 +1,9 @@
 $(function () {
 
-// ====================
-// ヘッダーメニューバー
-// ====================
 
-// let header = $("header");
-
-// $(window).scroll(function () {
-//   if ($(this).scrollTop() > 300 ) {
-//     header.fadeOut();
-//   } else {
-//     header.fadeIn();
-//   }
-
-// });
-
-
-// ====================
-// ハンバーガーメニュー
-// ====================
+  // ====================
+  // ハンバーガーメニュー
+  // ====================
 
   $(".toggle-btn").on("click", function () {
     ($("header").toggleClass("open"));
@@ -32,21 +17,22 @@ $(function () {
     $("header").removeClass("open");
   });
 
-
   let toggle = $(".toggle-btn");
-  toggle.hide();
 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 750 ) {
-      toggle.fadeIn();
-    } else {
-      toggle.fadeOut();
+    if (window.matchMedia("(min-width: 961px)").matches) {
+      toggle.hide();
+      //画面横幅が961px以上のときの処理
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 750) {
+          toggle.fadeIn();
+        } else {
+          toggle.fadeOut();
+        }
+      });
     }
 
-  });
 
 
-  
   /*=================================================
   スクロール時の画像フェード表示
   ===================================================*/
@@ -62,7 +48,7 @@ $(function () {
       let windowHeight = $(window).height();
       // fadeinクラスの要素が画面下にきてから200px通過した
       // したタイミングで要素を表示
-      if (scroll > target - windowHeight + 380) {
+      if (scroll > target - windowHeight + 330) {
         $(this).css("opacity", "1");
         $(this).css("transform", "translateY(0)");
       }
@@ -70,16 +56,16 @@ $(function () {
   });
 
 
-// ====================
-// トップに戻るボタン
-// ====================
+  // ====================
+  // トップに戻るボタン
+  // ====================
   let pagetop = $(".top-btn");
   pagetop.hide();
 
   // スクロールイベント（スクロールされた際に実行）
   $(window).scroll(function () {
     // スクロール位置が700pxを超えた場合
-    if ($(this).scrollTop() > 750 ) {
+    if ($(this).scrollTop() > 750) {
       // トップに戻るボタンを表示する
       pagetop.fadeIn();
 
