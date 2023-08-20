@@ -703,16 +703,18 @@ footer .wrapper {
 .footer-title a {
     font-size: 32px;
     font-family: 'Orelega One', cursive;
+    white-space: nowrap;
 }
 
 .footer-menu {
     display: flex;
     justify-content: center;
     text-align: center;
+    /* flex-wrap: wrap; */
 }
 
 footer li {
-    padding: 0 20px;
+    padding: 0 16px;
     border-right: 1px solid white;
     font-size: 14px;
     font-weight: bold;
@@ -1086,6 +1088,8 @@ footer .wrapper {
 }
 
 .footer-menu {
+    width: 100%;
+    flex-wrap: wrap;
     margin-bottom: 10px;
 }
 
